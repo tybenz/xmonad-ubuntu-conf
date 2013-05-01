@@ -1,0 +1,8 @@
+#!/bin/bash
+
+hour=`date "+%H"`
+if [ "$hour" -gt "$TERMINATOR_TIME" ];then
+  terminator -p default
+else
+  terminator -p light
+fi

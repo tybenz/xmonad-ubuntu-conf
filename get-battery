@@ -1,0 +1,32 @@
+#!/bin/bash
+# Echo battery level
+function batt_indicator () {
+if [ $(($1 <= 25)) == "1" ]
+then
+    echo "[-!-]"
+elif [ $(($1 <= 50)) == "1" ]
+then
+    echo "[$2 ]"
+elif [ $(($1 <= 75)) == "1" ]
+then
+    echo "[$2$2 ]"
+else
+    echo "[$2$2$2]"
+fi
+}
+# Find level and state
+str=`acpi -b`
+batt_state=${str#Batt*:\ }
+batt_state=${batt_state%%,*}
+batt_level=${str#Batt*,\ }
+batt_level=${batt_level%\%*}
+# Determine output
+if [ $batt_state == "Charging" ]
+then
+    echo "AC: $batt_level%"
+elif [ $batt_state == "Discharging" ]
+then
+    echo "Bat: $batt_level%"
+else
+    echo "AC: $batt_level%"
+fi

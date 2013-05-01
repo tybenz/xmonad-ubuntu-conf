@@ -1,0 +1,96 @@
+[global_config]
+  window_state = fullscreen
+  close_button_on_tab = False
+  borderless = True
+  title_transmit_bg_color = "#000000"
+  tab_position = left
+  title_inactive_bg_color = "#000000"
+[keybindings]
+  hide_window = <Shift><Control>a
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+    font = Ubuntu Mono Bold 12
+    allow_bold = False
+    palette = "#151515:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#d0d0d0:#505050:#f5f5f5:#d28445:#8f5536:#202020:#303030:#b0b0b0:#e0e0e0"
+    background_color = "#151515"
+    cursor_color = "#75b5aa"
+    foreground_color = "#f5f5f5"
+  [[light]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+    font = Ubuntu Mono Bold 12
+    allow_bold = False
+    palette = "#151515:#ac4142:#90a959:#f4bf75:#6a9fb5:#aa759f:#75b5aa:#fafafa:#505050:#c0c0c0:#d28445:#8f5536:#202020:#303030:#b0b0b0:#e0e0e0"
+    background_color = "#fafafa"
+    cursor_color = "#505050"
+    foreground_color = "#151515"
+  [[solarized-dark]]
+    scrollbar_position = hidden
+    palette = "#151515:#d30102:#859900:#b58900:#268bd2:#d33682:#2aa198:#e0e0e0:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#f5f5f5"
+    use_system_font = False
+    foreground_color = "#f5f5f5"
+    show_titlebar = False
+    font = Ubuntu Mono Bold 12
+    background_color = "#151515"
+    allow_bold = False
+    scrollback_infinite = True
+  [[solarized-light]]
+    scrollbar_position = hidden
+    palette = "#151515151515:#D3D301010202:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#E0E0E0E0E0E0:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#F5F5F5F5F5F5"
+    use_system_font = False
+    cursor_color = "#443123"
+    foreground_color = "#00002b2b3636"
+    show_titlebar = False
+    font = Ubuntu Mono Bold 12
+    background_color = "#f5f5f5f5f5f5"
+    allow_bold = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      position = 960:10
+      type = Window
+      order = 0
+      parent = ""
+      size = 952, 519
+    [[[terminal1]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child0
+  [[New Layout]]
+    [[[child0]]]
+      position = 0:0
+      type = Window
+      order = 0
+      parent = ""
+      size = 1920, 1080
+    [[[child1]]]
+      position = 960
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child3]]]
+      position = 540
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child1
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child3
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child3
+[plugins]

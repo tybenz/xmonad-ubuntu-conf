@@ -13,7 +13,7 @@
 Config { 
   -- Set font and default foreground/background colors. Note that
   -- the height of xmobar is controlled by the font you use.
-  font = "xft:Ubuntu Mono-14",
+  font = "xft:Ubuntu Mono-11",
   bgColor = "black",
   fgColor = "grey",
 
@@ -22,7 +22,7 @@ Config {
   -- of your screen to make it play nicely with stalonetray, which we
   -- want to be taking up the remainer of the space on the right side
   -- of your screen.
-  position = TopW L 95, 
+  position = TopW L 100, 
 
   -- list of commands which gather information about your system for
   -- presentation in the bar. 
@@ -45,15 +45,8 @@ Config {
     -- Battery information. This is likely to require some customization
     -- based upon your specific hardware. Or, for a desktop you may want
     -- to just remove this section entirely.
-    Run Battery [
-      "-t", "<acstatus>: <left>%", 
-      "--", 
-      "-c", "charge_full",
-      "-O", "AC",
-      "-o", "Bat",
-      "-h", "green",
-      "-l", "red"
-    ] 10,
+
+    Run Com "~/.xmonad/get-battery" [] "battery" 10,
     
     -- To get volume information, we run a custom bash script.
     -- This is because the built-in volume support in xmobar is disabled
