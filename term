@@ -1,8 +1,8 @@
 #!/bin/bash
 
-hour=`date "+%H"`
-if [ "$hour" -gt "$TERMINATOR_TIME" ];then
-  terminator -p default
-else
+hour=`date "+%k"`
+if [ "$hour" -ge "5" ] && [ "$hour" -lt "17" ];then
   terminator -p light
+else
+  terminator -p default
 fi
