@@ -92,7 +92,7 @@ myWorkspaces =
     "0:VM",    "Extr1", "Extr2"
   ]
 
-startupWorkspace = "5:Dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "1:Term"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
@@ -207,6 +207,16 @@ myKeyBindings =
     , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")
     , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
     , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
+    --spotify playpause
+    , ((myModMask, xK_Delete), spawn "spot playpause")
+    --spotify next
+    , ((myModMask, xK_Home), spawn "spot next")
+    --spotify prev
+    , ((myModMask, xK_End), spawn "spot previous")
+    --take a screenshot of selected window 
+    , ((myModMask .|. controlMask, xK_Print ), spawn "sgrab -s")
+    --take a screenshot of entire display 
+    , ((myModMask, xK_Print ), spawn "sgrab")
   ]
 
 

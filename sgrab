@@ -1,0 +1,21 @@
+#!/bin/bash
+
+filename=`date "+/home/tbenzige/screenshots/screen_%Y-%m-%d-%H-%M-%S.png"`
+
+if [ "$1" == "-u" ]; then
+  scrot -q 100 -m -u "$filename"
+elif [ "$1" == "-s" ]; then
+  scrot -q 100 -m -s "$filename"
+else
+  scrot -q 100 -m "$filename"
+fi
+
+xdg-open "$filename"
+
+status=`echo $?`
+if [ "$status" -ne "0" ]; then
+  echo "Error grabbing screenshot"
+else
+  echo "Success!"
+  gitdrop "$filename"
+fi
