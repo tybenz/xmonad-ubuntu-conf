@@ -21,12 +21,20 @@ batt_state=${batt_state%%,*}
 batt_level=${str#Batt*,\ }
 batt_level=${batt_level%\%*}
 # Determine output
-if [ $batt_state == "Charging" ]
-then
-    echo "AC: $batt_level%"
-elif [ $batt_state == "Discharging" ]
-then
-    echo "Bat: $batt_level%"
+if [ $1 ] && [ $1 == "-c" ]; then
+  if [ $batt_level -lt "10" ];then
+    echo "#ff0000"
+  else
+    echo "#bbbbbb"
+  fi
 else
-    echo "AC: $batt_level%"
+  if [ $batt_state == "Charging" ]
+  then
+      echo "AC: $batt_level%"
+  elif [ $batt_state == "Discharging" ]
+  then
+      echo "Bat: $batt_level%"
+  else
+      echo "AC: $batt_level%"
+  fi
 fi

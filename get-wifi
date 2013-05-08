@@ -1,0 +1,21 @@
+#!/bin/bash
+
+wifi=`iwconfig wlan0 | awk -F '=' '/Quality/ {print $2}' | cut -d '/' -f 1`
+
+if [ "$wifi" ]; then
+  if [ "$wifi" -gt "52" ];then
+    out='100%'
+  elif [ "$wifi" -gt "35" ]; then
+    out='75%'
+  elif [ "$wifi" -gt "17" ]; then
+    out='50%'
+  elif [ "$wifi" -gt "0" ]; then
+    out='25%'
+  else
+    out='0%'
+  fi
+else
+  out='--'
+fi
+
+echo "WiFi: $out"

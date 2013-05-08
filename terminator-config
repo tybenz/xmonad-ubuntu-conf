@@ -1,8 +1,80 @@
-#!/bin/bash
-
-hour=`date "+%H"`
-if [ "$hour" -ge "$TERMINATOR_MORNING" ] && [ "$hour" -lt "$TERMINATOR_EVENING" ];then
-  terminator -p light
-else
-  terminator -p default
-fi
+[global_config]
+  window_state = fullscreen
+  close_button_on_tab = False
+  borderless = True
+  title_transmit_bg_color = "#000000"
+  tab_position = left
+  title_inactive_bg_color = "#000000"
+[keybindings]
+  hide_window = <Shift><Control>q
+  go_up = <Shift><Control>k
+  go_down = <Shift><Control>j
+  go_left = <Shift><Control>h
+  go_right = <Shift><Control>l
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+    font = Ubuntu Mono Semibold 12
+    allow_bold = True
+    palette = "#000000:#912226:#778900:#AE7B00:#1D2594:#682a9b:#2B6651:#929593:#666666:#CC6666:#B5BD68:#F0C674:#81A2BE:#B294BB:#8ABEB7:#ECEBEC"
+    background_color = "#050505"
+    cursor_color = "#81A2BE"
+    foreground_color = "#c5c8c6"
+  [[light]]
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+    font = Ubuntu Mono Semibold 12
+    allow_bold = True
+    palette = "#000000:#912226:#778900:#AE7B00:#1D2594:#682a9b:#2B6651:#929593:#666666:#CC6666:#B5BD68:#F0C674:#81A2BE:#B294BB:#8ABEB7:#ECEBEC"
+    background_color = "#f9f9f9"
+    cursor_color = "#81A2BE"
+    foreground_color = "#1d1f21"
+[layouts]
+  [[default]]
+    [[[child0]]]
+      position = 960:10
+      type = Window
+      order = 0
+      parent = ""
+      size = 952, 519
+    [[[terminal1]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child0
+  [[New Layout]]
+    [[[child0]]]
+      position = 0:0
+      type = Window
+      order = 0
+      parent = ""
+      size = 1920, 1080
+    [[[child1]]]
+      position = 960
+      type = HPaned
+      order = 0
+      parent = child0
+    [[[child3]]]
+      position = 540
+      type = VPaned
+      order = 1
+      parent = child1
+    [[[terminal2]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child1
+    [[[terminal5]]]
+      profile = default
+      type = Terminal
+      order = 1
+      parent = child3
+    [[[terminal4]]]
+      profile = default
+      type = Terminal
+      order = 0
+      parent = child3
+[plugins]
