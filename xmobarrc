@@ -65,6 +65,8 @@ Config {
     -- in Debian and derivatives like Ubuntu. 
     Run Com "~/.xmonad/get-volume" [] "myvolume" 10,
 
+    Run Com "~/.xmonad/get-mic" [] "mymic" 10,
+
     Run Com "~/.xmonad/get-wifi" [] "mywifi" 10,
     
     -- This line tells xmobar to read input from stdin. That's how we
@@ -81,5 +83,5 @@ Config {
 
    -- Overall template for the layout of the xmobar contents. Note that
    -- space is significant and can be used to add padding.
-   template = "%StdinReader% }{ <fc=%battery-color%>%battery%</fc> | %cpu% | %memory% | %mywifi% | Vol: %myvolume%    <fc=#e6744c>%date%</fc>     "
+   template = "%StdinReader% }{ <fc=%battery-color%>%battery%</fc> | %cpu% | %memory% | %mywifi% | Vol: %myvolume% | Mic: %mymic%    <fc=#0088cc>%date%</fc>     "
 }
