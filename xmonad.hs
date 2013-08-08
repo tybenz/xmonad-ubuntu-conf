@@ -40,8 +40,8 @@ import Data.Ratio ((%))
 -}
 
 myModMask            = mod1Mask       -- changes the mod key to "super"
-myFocusedBorderColor = "#ff0000"      -- color of focused border
-myNormalBorderColor  = "#cccccc"      -- color of inactive border
+myFocusedBorderColor = "#0088cc"      -- color of focused border
+myNormalBorderColor  = "#000000"      -- color of inactive border
 myBorderWidth        = 1              -- width of border around windows
 myTerminal           = "term"   -- which terminal software to use
 myIMRosterTitle      = "Contact List" -- title of roster on IM workspace
